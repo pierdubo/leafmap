@@ -1,8 +1,16 @@
 # Tutorials
 
-[![image](https://colab.research.google.com/assets/colab-badge.svg)](https://gishub.org/leafmap-colab)
-[![image](https://mybinder.org/badge_logo.svg)](https://gishub.org/leafmap-binder)
-[![image](https://mybinder.org/badge_logo.svg)](https://gishub.org/leafmap-binder)
+[![image](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/opengeos/leafmap/blob/master/examples/notebooks/00_key_features.ipynb)
+[![image](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/opengeos/leafmap/blob/master)
+[![image](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/opengeos/leafmap/HEAD)
+
+## Workshops
+
+-   FOSS4G 2021 - Using Leafmap for Geospatial Analysis and Data Visualization ([notebook](https://leafmap.org/workshops/FOSS4G_2021/))
+-   SIGSPATIAL 2021 - Interactive Mapping and Geospatial Analysis with Leafmap & Jupyter ([notebook](https://leafmap.org/workshops/SIGSPATIAL_2021/))
+-   YouthMappers 2021 - Interactive Mapping and Geospatial Analysis with Leafmap and Jupyter ([notebook](https://leafmap.org/workshops/YouthMappers_2021/))
+
+## Tutorials
 
 1. Introducing the leafmap Python package for interactive mapping ([video](https://youtu.be/-UPt7x3Gn60) | [gif](https://i.imgur.com/2pRxunR.gif) | [notebook](https://leafmap.org/notebooks/01_leafmap_intro))
 2. Using basemaps in leafmap ([video](https://youtu.be/uylpjbDZesY) | [gif](https://youtu.be/-lOo-vxjrDM) | [notebook](https://leafmap.org/notebooks/02_using_basemaps))
@@ -57,6 +65,47 @@
 51. Clipping an image by mask ([notebook](https://leafmap.org/notebooks/51_clip_image))
 52. Visualizing NetCDF data ([notebook](https://leafmap.org/notebooks/52_netcdf/))
 53. Creating choropleth maps with a variety of classification schemes ([notebook](https://leafmap.org/notebooks/53_choropleth))
+54. Plotting elevation data in 3D without only one line of code ([notebook](https://leafmap.org/notebooks/54_plot_raster))
+55. LiDAR data analysis and visualization with whitebox and leafmap ([notebook](https://leafmap.org/notebooks/55_lidar))
+56. Downloading 10-m National Elevation Dataset (NED) with only one line of code ([notebook](https://leafmap.org/notebooks/56_download_ned))
+57. Download data from The National Map ([notebook](https://leafmap.org/notebooks/57_national_map))
+58. Creating interactive maps with bokeh ([notebook](https://leafmap.org/notebooks/58_bokeh))
+59. Creating legends using leafmap with only one line of code ([notebook](https://leafmap.org/notebooks/59_create_legend))
+60. Adding text, images, HTML, and widgets to the map ([notebook](https://leafmap.org/notebooks/60_add_widget))
+61. Creating an animated GIF from a vector dataset ([notebook](https://leafmap.org/notebooks/61_vector_to_gif))
+62. Adding colorbars to a folium map ([notebook](https://leafmap.org/notebooks/62_folium_colorbar))
+63. Using leafmap with ArcGIS Pro ([notebook](https://leafmap.org/notebooks/63_arcgis))
+64. Searching open geospatial datasets using STAC API ([notebook](https://leafmap.org/notebooks/64_stac_search))
+65. Visualizing raster datasets interactively in SageMaker Studio Lab ([notebook](https://leafmap.org/notebooks/65_sagemaker))
+66. Developing interactive web apps with gradio and leafmap ([notebook](https://leafmap.org/notebooks/66_gradio))
+67. Visualizing Maxar Open Data with Leafmap ([notebook](https://leafmap.org/notebooks/67_maxar_open_data))
+68. Searching and visualizing OpenAerialMap imagery with leafmap ([notebook](https://leafmap.org/notebooks/68_openaerialmap))
+69. Visualizing Maxar Open Data for the 2023 Turkey-Syria Earthquake ([notebook](https://leafmap.org/notebooks/69_turkey_earthquake))
+70. Calculating zonal statistics - summarizing geospatial raster datasets based on vector geometries ([notebook](https://leafmap.org/notebooks/70_zonal_stats))
+71. Loading geospatial datasets from an AWS S3 bucket ([notebook](https://leafmap.org/notebooks/71_aws_s3))
+72. Creating timelapse animations from satellite imagery timeseries ([notebook](https://leafmap.org/notebooks/72_timelapse))
+73. Searching Geospatial Data Interactively with Custom STAC API Endpoints ([notebook](https://leafmap.org/notebooks/73_custom_stac))
+74. Downloading maps tiles and converting them to a GeoTIFF file ([notebook](https://leafmap.org/notebooks/74_map_tiles_to_geotiff))
+75. Segmenting satellite imagery with the Segment Anything Model ([notebook](https://leafmap.org/notebooks/75_segment_anything))
+76. Comparing images with an interactive slider ([notebook](https://leafmap.org/notebooks/76_image_comparison))
+77. Splitting a raster dataset into multiple tiles ([notebook](https://leafmap.org/notebooks/77_split_raster))
+78. Interactive Extraction and Visualization of AWS Open Geospatial Data ([notebook](https://leafmap.org/notebooks/78_read_raster))
+79. Visualizing time series images interactively with a time slider ([notebook](https://leafmap.org/notebooks/79_timeseries))
+80. Visualizing solar radiation data from Google Solar API ([notebook](https://leafmap.org/notebooks/80_solar))
+81. Downloading Microsoft and Google Building Footprints ([notebook](https://leafmap.org/notebooks/81_buildings))
+82. Visualizing PMTiles with leafmap ([notebook](https://leafmap.org/notebooks/82_pmtiles))
+83. Visualizing large vector datasets with lonboard ([notebook](https://leafmap.org/notebooks/83_vector_viz))
+84. Reading GeoParquet files and visualizing vector data interactively ([notebook](https://leafmap.org/notebooks/84_read_parquet))
+85. How to search and download GEDI L4A dataset interactively ([notebook](https://leafmap.org/notebooks/85_gedi))
+86. Adding markers to the map ([notebook](https://leafmap.org/notebooks/86_add_markers))
+87. Cloud-based geoprocessing with Actinia ([notebook](https://leafmap.org/notebooks/87_actinia))
+88. Searching and downloading NASA Earth science data products ([notebook](https://leafmap.org/notebooks/88_nasa_earth_data))
+89. Visualizing in-memory raster datasets and image arrays ([notebook](https://leafmap.org/notebooks/89_image_array_viz))
+90. Querying pixel values with the interactive pixel inspector ([notebook](https://leafmap.org/notebooks/90_pixel_inspector))
+91. Visualizing raster data interactively ([notebook](https://leafmap.org/notebooks/91_raster_viz_gui))
+92. Creating 3D maps with the MapLibre mapping backend ([notebook](https://leafmap.org/notebooks/92_maplibre))
+93. Visualizing PMTiles with Leafmap and MapLibre ([notebook](https://leafmap.org/notebooks/93_maplibre_pmtiles))
+94. Creating 3D maps with Mapbox ([notebook](https://leafmap.org/notebooks/94_mapbox))
 
 ## Demo
 
