@@ -1350,6 +1350,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.common.download_nlcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      download_nlcd()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.common.download_tnm" class="md-nav__link">
     <span class="md-ellipsis">
       download_tnm()
@@ -4758,6 +4767,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../maplibre/fields_of_the_world/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fields of the world
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../maplibre/fit_bounds/" class="md-nav__link">
         
   
@@ -7796,6 +7826,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/100_nlcd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    100 nlcd
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -8514,6 +8565,15 @@
   <a href="#leafmap.common.download_ned" class="md-nav__link">
     <span class="md-ellipsis">
       download_ned()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.download_nlcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      download_nlcd()
     </span>
   </a>
   
@@ -12200,11 +12260,11 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">io</span>
 
-    <span class="kn">import</span> <span class="nn">pkg_resources</span>
+    <span class="kn">import</span> <span class="nn">importlib.resources</span>
     <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span><span class="p">,</span> <span class="n">ImageFont</span><span class="p">,</span> <span class="n">ImageSequence</span>
 
     <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
-    <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span><span class="s2">&quot;leafmap&quot;</span><span class="p">,</span> <span class="s2">&quot;leafmap.py&quot;</span><span class="p">))</span>
+    <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s2">&quot;leafmap&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;leafmap.py&quot;</span><span class="p">)</span>
     <span class="n">default_font</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_dir</span><span class="p">,</span> <span class="s2">&quot;data/fonts/arial.ttf&quot;</span><span class="p">)</span>
 
     <span class="n">in_gif</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">in_gif</span><span class="p">)</span>
@@ -16979,10 +17039,10 @@ style = {
 <span class="sd">        str: The HTML code of the legend.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="kn">import</span> <span class="nn">pkg_resources</span>
+    <span class="kn">import</span> <span class="nn">importlib.resources</span>
     <span class="kn">from</span> <span class="nn">.legends</span> <span class="kn">import</span> <span class="n">builtin_legends</span>
 
-    <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span><span class="s2">&quot;leafmap&quot;</span><span class="p">,</span> <span class="s2">&quot;leafmap.py&quot;</span><span class="p">))</span>
+    <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s2">&quot;leafmap&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;leafmap.py&quot;</span><span class="p">)</span>
     <span class="n">legend_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_dir</span><span class="p">,</span> <span class="s2">&quot;data/template/legend_style.html&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">draggable</span><span class="p">:</span>
@@ -20125,6 +20185,114 @@ See https://apps.nationalmap.gov/tnmaccess/#/product for more information.</p></
 
 
 
+<h2 id="leafmap.common.download_nlcd" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">download_nlcd</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.common.download_nlcd" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Downloads NLCD (National Land Cover Database) files for the specified years.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>years</code></td>
+        <td><code>List[int]</code></td>
+        <td><p>A list of years for which to download the NLCD files.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>out_dir</code></td>
+        <td><code>str</code></td>
+        <td><p>The directory where the downloaded files will be saved.
+Defaults to the current working directory.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>quiet</code></td>
+        <td><code>bool</code></td>
+        <td><p>If True, suppresses download progress messages. Defaults to False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>Additional keyword arguments to pass to the download_file function.</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>None</code></td>
+      <td><p>None</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">download_nlcd</span><span class="p">(</span>
+    <span class="n">years</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">quiet</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Downloads NLCD (National Land Cover Database) files for the specified years.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        years (List[int]): A list of years for which to download the NLCD files.</span>
+<span class="sd">        out_dir (str, optional): The directory where the downloaded files will be saved.</span>
+<span class="sd">            Defaults to the current working directory.</span>
+<span class="sd">        quiet (bool, optional): If True, suppresses download progress messages. Defaults to False.</span>
+<span class="sd">        **kwargs (Any): Additional keyword arguments to pass to the download_file function.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">allow_years</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1985</span><span class="p">,</span> <span class="mi">2024</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://s3-us-west-2.amazonaws.com/mrlc/Annual_NLCD_LndCov_</span><span class="si">{}</span><span class="s2">_CU_C1V0.tif&quot;</span>
+    <span class="k">if</span> <span class="n">out_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">out_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">out_dir</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">year</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allow_years</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Year </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> is not available. Skipping...&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="n">year_url</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+        <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">year_url</span><span class="p">)</span>
+        <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">basename</span><span class="p">)</span>
+        <span class="n">download_file</span><span class="p">(</span><span class="n">year_url</span><span class="p">,</span> <span class="n">filepath</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
 <h2 id="leafmap.common.download_tnm" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">download_tnm</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_url</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">download_args</span><span class="o">=</span><span class="p">{},</span> <span class="n">geopandas_args</span><span class="o">=</span><span class="p">{},</span> <span class="n">API</span><span class="o">=</span><span class="p">{})</span></code>
 
@@ -20597,7 +20765,8 @@ set "MAPTILER_KEY" and "MAPTILER_KEY_PUBLIC" to your MapTiler API key and public
         <span class="n">out_lines</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;&quot;m&quot;&#39;</span><span class="p">:</span>
-                <span class="n">out_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="s2">&quot;m.to_html()&quot;</span><span class="p">))</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">basename</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+                <span class="n">out_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;m.to_html(title=&#39;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&#39;)&quot;</span><span class="p">))</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">out_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 
@@ -24623,9 +24792,9 @@ Source code adapted from https://github.com/mapbox/rasterio/blob/master/rasterio
 <span class="sd">        dict: A dictionary of Census data.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">json</span>
-    <span class="kn">import</span> <span class="nn">pkg_resources</span>
+    <span class="kn">import</span> <span class="nn">importlib.resources</span>
 
-    <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span><span class="s2">&quot;leafmap&quot;</span><span class="p">,</span> <span class="s2">&quot;leafmap.py&quot;</span><span class="p">))</span>
+    <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s2">&quot;leafmap&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;leafmap.py&quot;</span><span class="p">)</span>
     <span class="n">census_data</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_dir</span><span class="p">,</span> <span class="s2">&quot;data/census_data.json&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">reset</span><span class="p">:</span>

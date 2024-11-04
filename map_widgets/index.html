@@ -2166,6 +2166,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../maplibre/fields_of_the_world/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fields of the world
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../maplibre/fit_bounds/" class="md-nav__link">
         
   
@@ -5204,6 +5225,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/100_nlcd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    100 nlcd
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -6208,12 +6250,10 @@ Legend            (<span title="ipywidgets.widgets.widget_box.VBox">VBox</span>)
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">import</span> <span class="nn">os</span>  <span class="c1"># pylint: disable=import-outside-toplevel</span>
         <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>  <span class="c1"># pylint: disable=import-outside-toplevel</span>
-        <span class="kn">import</span> <span class="nn">pkg_resources</span>  <span class="c1"># pylint: disable=import-outside-toplevel</span>
+        <span class="kn">import</span> <span class="nn">importlib.resources</span>  <span class="c1"># pylint: disable=import-outside-toplevel</span>
         <span class="kn">from</span> <span class="nn">.legends</span> <span class="kn">import</span> <span class="n">builtin_legends</span>  <span class="c1"># pylint: disable=import-outside-toplevel</span>
 
-        <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span>
-            <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span><span class="s2">&quot;leafmap&quot;</span><span class="p">,</span> <span class="s2">&quot;leafmap.py&quot;</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s2">&quot;leafmap&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;leafmap.py&quot;</span><span class="p">)</span>
         <span class="n">legend_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_dir</span><span class="p">,</span> <span class="s2">&quot;data/template/legend.html&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">legend_template</span><span class="p">):</span>
@@ -6509,12 +6549,10 @@ Legend            (<span title="ipywidgets.widgets.widget_box.VBox">VBox</span>)
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">os</span>  <span class="c1"># pylint: disable=import-outside-toplevel</span>
     <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>  <span class="c1"># pylint: disable=import-outside-toplevel</span>
-    <span class="kn">import</span> <span class="nn">pkg_resources</span>  <span class="c1"># pylint: disable=import-outside-toplevel</span>
+    <span class="kn">import</span> <span class="nn">importlib.resources</span>  <span class="c1"># pylint: disable=import-outside-toplevel</span>
     <span class="kn">from</span> <span class="nn">.legends</span> <span class="kn">import</span> <span class="n">builtin_legends</span>  <span class="c1"># pylint: disable=import-outside-toplevel</span>
 
-    <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span>
-        <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span><span class="s2">&quot;leafmap&quot;</span><span class="p">,</span> <span class="s2">&quot;leafmap.py&quot;</span><span class="p">)</span>
-    <span class="p">)</span>
+    <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s2">&quot;leafmap&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;leafmap.py&quot;</span><span class="p">)</span>
     <span class="n">legend_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_dir</span><span class="p">,</span> <span class="s2">&quot;data/template/legend.html&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">legend_template</span><span class="p">):</span>

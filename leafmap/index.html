@@ -1105,6 +1105,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_nlcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_nlcd()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_nlcd_ts" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_nlcd_ts()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_nwi" class="md-nav__link">
     <span class="md-ellipsis">
       add_nwi()
@@ -3023,6 +3041,27 @@
   
   <span class="md-ellipsis">
     Fallback image
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maplibre/fields_of_the_world/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fields of the world
   </span>
   
 
@@ -6077,6 +6116,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/100_nlcd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    100 nlcd
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -6403,6 +6463,24 @@
   <a href="#leafmap.leafmap.Map.add_netcdf" class="md-nav__link">
     <span class="md-ellipsis">
       add_netcdf()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_nlcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_nlcd()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_nlcd_ts" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_nlcd_ts()
     </span>
   </a>
   
@@ -9063,12 +9141,10 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 <span class="sd">            layer_name (str, optional): Layer name of the legend to be associated with. Defaults to None.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">import</span> <span class="nn">pkg_resources</span>
+        <span class="kn">import</span> <span class="nn">importlib.resources</span>
         <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
 
-        <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span>
-            <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span><span class="s2">&quot;leafmap&quot;</span><span class="p">,</span> <span class="s2">&quot;leafmap.py&quot;</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s2">&quot;leafmap&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;leafmap.py&quot;</span><span class="p">)</span>
         <span class="n">legend_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_dir</span><span class="p">,</span> <span class="s2">&quot;data/template/legend.html&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="s2">&quot;min_width&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
@@ -12880,6 +12956,162 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="p">)</span>
         <span class="k">if</span> <span class="n">add_legend</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Wetland Type&quot;</span><span class="p">,</span> <span class="n">builtin_legend</span><span class="o">=</span><span class="s2">&quot;NWI&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_nlcd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">years</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2023</span><span class="p">],</span> <span class="n">add_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds National Land Cover Database (NLCD) data to the map.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            years (list): A list of years to add. It can be any of 1985-2023. Defaults to [2023].</span>
+<span class="sd">            add_legend (bool): Whether to add a legend to the map. Defaults to True.</span>
+<span class="sd">            **kwargs: Additional keyword arguments to pass to the add_cog_layer method.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">allowed_years</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1985</span><span class="p">,</span> <span class="mi">2024</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;https://s3-us-west-2.amazonaws.com/mrlc/Annual_NLCD_LndCov_</span><span class="si">{}</span><span class="s2">_CU_C1V0.tif&quot;</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="s2">&quot;colormap&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;colormap&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;11&quot;</span><span class="p">:</span> <span class="s2">&quot;#466b9f&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;12&quot;</span><span class="p">:</span> <span class="s2">&quot;#d1def8&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;21&quot;</span><span class="p">:</span> <span class="s2">&quot;#dec5c5&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;22&quot;</span><span class="p">:</span> <span class="s2">&quot;#d99282&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;23&quot;</span><span class="p">:</span> <span class="s2">&quot;#eb0000&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;24&quot;</span><span class="p">:</span> <span class="s2">&quot;#ab0000&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;31&quot;</span><span class="p">:</span> <span class="s2">&quot;#b3ac9f&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;41&quot;</span><span class="p">:</span> <span class="s2">&quot;#68ab5f&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;42&quot;</span><span class="p">:</span> <span class="s2">&quot;#1c5f2c&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;43&quot;</span><span class="p">:</span> <span class="s2">&quot;#b5c58f&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;51&quot;</span><span class="p">:</span> <span class="s2">&quot;#af963c&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;52&quot;</span><span class="p">:</span> <span class="s2">&quot;#ccb879&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;71&quot;</span><span class="p">:</span> <span class="s2">&quot;#dfdfc2&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;72&quot;</span><span class="p">:</span> <span class="s2">&quot;#d1d182&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;73&quot;</span><span class="p">:</span> <span class="s2">&quot;#a3cc51&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;74&quot;</span><span class="p">:</span> <span class="s2">&quot;#82ba9e&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;81&quot;</span><span class="p">:</span> <span class="s2">&quot;#dcd939&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;82&quot;</span><span class="p">:</span> <span class="s2">&quot;#ab6c28&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;90&quot;</span><span class="p">:</span> <span class="s2">&quot;#b8d9eb&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;95&quot;</span><span class="p">:</span> <span class="s2">&quot;#6c9fb8&quot;</span><span class="p">,</span>
+            <span class="p">}</span>
+
+        <span class="k">if</span> <span class="s2">&quot;zoom_to_layer&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;zoom_to_layer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">year</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed_years</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Year must be one of </span><span class="si">{</span><span class="n">allowed_years</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+            <span class="n">year_url</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_cog_layer</span><span class="p">(</span><span class="n">year_url</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;NLCD </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">add_legend</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;NLCD Land Cover Type&quot;</span><span class="p">,</span> <span class="n">builtin_legend</span><span class="o">=</span><span class="s2">&quot;NLCD&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_nlcd_ts</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">left_year</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1985</span><span class="p">,</span>
+        <span class="n">right_layer</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2023</span><span class="p">,</span>
+        <span class="n">widget_width</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;70px&quot;</span><span class="p">,</span>
+        <span class="n">add_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">add_layer_control</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds a time series comparison of NLCD (National Land Cover Database) layers to the map.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            left_year (int, optional): The initial year for the left layer. Defaults to 1985.</span>
+<span class="sd">            right_layer (int, optional): The initial year for the right layer. Defaults to 2023.</span>
+<span class="sd">            widget_width (str, optional): The width of the dropdown widgets. Defaults to &quot;70px&quot;.</span>
+<span class="sd">            add_legend (bool, optional): If True, adds a legend to the map. Defaults to True.</span>
+<span class="sd">            add_layer_control (bool, optional): If True, adds a layer control to the map. Defaults to True.</span>
+<span class="sd">            **kwargs (Any): Additional keyword arguments to pass to the cog_tile function.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">allowed_years</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1985</span><span class="p">,</span> <span class="mi">2024</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+        <span class="n">left_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+            <span class="n">options</span><span class="o">=</span><span class="n">allowed_years</span><span class="p">,</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">left_year</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;description_width&quot;</span><span class="p">:</span> <span class="s2">&quot;initial&quot;</span><span class="p">},</span>
+            <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">widget_width</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="n">right_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+            <span class="n">options</span><span class="o">=</span><span class="n">allowed_years</span><span class="p">,</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">right_layer</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;description_width&quot;</span><span class="p">:</span> <span class="s2">&quot;initial&quot;</span><span class="p">},</span>
+            <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">widget_width</span><span class="p">),</span>
+        <span class="p">)</span>
+
+        <span class="n">left_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">left_widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topleft&quot;</span><span class="p">)</span>
+        <span class="n">right_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span>
+            <span class="n">widget</span><span class="o">=</span><span class="n">right_widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">left_control</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">right_control</span><span class="p">)</span>
+
+        <span class="n">url</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;https://s3-us-west-2.amazonaws.com/mrlc/Annual_NLCD_LndCov_</span><span class="si">{}</span><span class="s2">_CU_C1V0.tif&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">colormap</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;11&quot;</span><span class="p">:</span> <span class="s2">&quot;#466b9f&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;12&quot;</span><span class="p">:</span> <span class="s2">&quot;#d1def8&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;21&quot;</span><span class="p">:</span> <span class="s2">&quot;#dec5c5&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;22&quot;</span><span class="p">:</span> <span class="s2">&quot;#d99282&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;23&quot;</span><span class="p">:</span> <span class="s2">&quot;#eb0000&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;24&quot;</span><span class="p">:</span> <span class="s2">&quot;#ab0000&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;31&quot;</span><span class="p">:</span> <span class="s2">&quot;#b3ac9f&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;41&quot;</span><span class="p">:</span> <span class="s2">&quot;#68ab5f&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;42&quot;</span><span class="p">:</span> <span class="s2">&quot;#1c5f2c&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;43&quot;</span><span class="p">:</span> <span class="s2">&quot;#b5c58f&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;51&quot;</span><span class="p">:</span> <span class="s2">&quot;#af963c&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;52&quot;</span><span class="p">:</span> <span class="s2">&quot;#ccb879&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;71&quot;</span><span class="p">:</span> <span class="s2">&quot;#dfdfc2&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;72&quot;</span><span class="p">:</span> <span class="s2">&quot;#d1d182&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;73&quot;</span><span class="p">:</span> <span class="s2">&quot;#a3cc51&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;74&quot;</span><span class="p">:</span> <span class="s2">&quot;#82ba9e&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;81&quot;</span><span class="p">:</span> <span class="s2">&quot;#dcd939&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;82&quot;</span><span class="p">:</span> <span class="s2">&quot;#ab6c28&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;90&quot;</span><span class="p">:</span> <span class="s2">&quot;#b8d9eb&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;95&quot;</span><span class="p">:</span> <span class="s2">&quot;#6c9fb8&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">left_url</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">left_year</span><span class="p">)</span>
+        <span class="n">right_url</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">right_layer</span><span class="p">)</span>
+        <span class="n">left_tile</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span><span class="n">left_url</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">right_tile</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span><span class="n">right_url</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">left_layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">left_tile</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;NLCD </span><span class="si">{</span><span class="n">left_year</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">right_layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">right_tile</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;NLCD </span><span class="si">{</span><span class="n">right_layer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">split_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">SplitMapControl</span><span class="p">(</span>
+            <span class="n">left_layer</span><span class="o">=</span><span class="n">left_layer</span><span class="p">,</span> <span class="n">right_layer</span><span class="o">=</span><span class="n">right_layer</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">split_control</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">add_layer_control</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_layer_control</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">add_legend</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;NLCD Land Cover Type&quot;</span><span class="p">,</span> <span class="n">builtin_legend</span><span class="o">=</span><span class="s2">&quot;NLCD&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">change_left_year</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+            <span class="n">left_tile</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="p">),</span> <span class="n">colormap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">left_layer</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">left_tile</span>
+            <span class="n">left_layer</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;NLCD </span><span class="si">{</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="k">def</span> <span class="nf">change_right_year</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+            <span class="n">right_tile</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="p">),</span> <span class="n">colormap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">right_layer</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">right_tile</span>
+            <span class="n">right_layer</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;NLCD </span><span class="si">{</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="n">left_widget</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">change_left_year</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+        <span class="n">right_widget</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">change_right_year</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
 </code></pre></div>
         </details>
 
@@ -16094,12 +16326,10 @@ be treated as None. Defaults to "on_hover".</p></td>
 <span class="sd">        layer_name (str, optional): Layer name of the legend to be associated with. Defaults to None.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">pkg_resources</span>
+    <span class="kn">import</span> <span class="nn">importlib.resources</span>
     <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
 
-    <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span>
-        <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span><span class="s2">&quot;leafmap&quot;</span><span class="p">,</span> <span class="s2">&quot;leafmap.py&quot;</span><span class="p">)</span>
-    <span class="p">)</span>
+    <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="s2">&quot;leafmap&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;leafmap.py&quot;</span><span class="p">)</span>
     <span class="n">legend_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_dir</span><span class="p">,</span> <span class="s2">&quot;data/template/legend.html&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="s2">&quot;min_width&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
@@ -17517,6 +17747,318 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
         <span class="n">layer_name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="leafmap.leafmap.Map.add_nlcd" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_nlcd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2023</span><span class="p">],</span> <span class="n">add_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.leafmap.Map.add_nlcd" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Adds National Land Cover Database (NLCD) data to the map.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>years</code></td>
+        <td><code>list</code></td>
+        <td><p>A list of years to add. It can be any of 1985-2023. Defaults to [2023].</p></td>
+        <td><code>[2023]</code></td>
+      </tr>
+      <tr>
+        <td><code>add_legend</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to add a legend to the map. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td></td>
+        <td><p>Additional keyword arguments to pass to the add_cog_layer method.</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>None</code></td>
+      <td><p>None</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/leafmap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_nlcd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">years</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2023</span><span class="p">],</span> <span class="n">add_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds National Land Cover Database (NLCD) data to the map.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        years (list): A list of years to add. It can be any of 1985-2023. Defaults to [2023].</span>
+<span class="sd">        add_legend (bool): Whether to add a legend to the map. Defaults to True.</span>
+<span class="sd">        **kwargs: Additional keyword arguments to pass to the add_cog_layer method.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">allowed_years</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1985</span><span class="p">,</span> <span class="mi">2024</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;https://s3-us-west-2.amazonaws.com/mrlc/Annual_NLCD_LndCov_</span><span class="si">{}</span><span class="s2">_CU_C1V0.tif&quot;</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="s2">&quot;colormap&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+
+        <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;colormap&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;11&quot;</span><span class="p">:</span> <span class="s2">&quot;#466b9f&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;12&quot;</span><span class="p">:</span> <span class="s2">&quot;#d1def8&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;21&quot;</span><span class="p">:</span> <span class="s2">&quot;#dec5c5&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;22&quot;</span><span class="p">:</span> <span class="s2">&quot;#d99282&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;23&quot;</span><span class="p">:</span> <span class="s2">&quot;#eb0000&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;24&quot;</span><span class="p">:</span> <span class="s2">&quot;#ab0000&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;31&quot;</span><span class="p">:</span> <span class="s2">&quot;#b3ac9f&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;41&quot;</span><span class="p">:</span> <span class="s2">&quot;#68ab5f&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;42&quot;</span><span class="p">:</span> <span class="s2">&quot;#1c5f2c&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;43&quot;</span><span class="p">:</span> <span class="s2">&quot;#b5c58f&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;51&quot;</span><span class="p">:</span> <span class="s2">&quot;#af963c&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;52&quot;</span><span class="p">:</span> <span class="s2">&quot;#ccb879&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;71&quot;</span><span class="p">:</span> <span class="s2">&quot;#dfdfc2&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;72&quot;</span><span class="p">:</span> <span class="s2">&quot;#d1d182&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;73&quot;</span><span class="p">:</span> <span class="s2">&quot;#a3cc51&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;74&quot;</span><span class="p">:</span> <span class="s2">&quot;#82ba9e&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;81&quot;</span><span class="p">:</span> <span class="s2">&quot;#dcd939&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;82&quot;</span><span class="p">:</span> <span class="s2">&quot;#ab6c28&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;90&quot;</span><span class="p">:</span> <span class="s2">&quot;#b8d9eb&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;95&quot;</span><span class="p">:</span> <span class="s2">&quot;#6c9fb8&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+
+    <span class="k">if</span> <span class="s2">&quot;zoom_to_layer&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;zoom_to_layer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">year</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed_years</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Year must be one of </span><span class="si">{</span><span class="n">allowed_years</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="n">year_url</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_cog_layer</span><span class="p">(</span><span class="n">year_url</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;NLCD </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">add_legend</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;NLCD Land Cover Type&quot;</span><span class="p">,</span> <span class="n">builtin_legend</span><span class="o">=</span><span class="s2">&quot;NLCD&quot;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="leafmap.leafmap.Map.add_nlcd_ts" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_nlcd_ts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_year</span><span class="o">=</span><span class="mi">1985</span><span class="p">,</span> <span class="n">right_layer</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">widget_width</span><span class="o">=</span><span class="s1">&#39;70px&#39;</span><span class="p">,</span> <span class="n">add_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">add_layer_control</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.leafmap.Map.add_nlcd_ts" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Adds a time series comparison of NLCD (National Land Cover Database) layers to the map.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>left_year</code></td>
+        <td><code>int</code></td>
+        <td><p>The initial year for the left layer. Defaults to 1985.</p></td>
+        <td><code>1985</code></td>
+      </tr>
+      <tr>
+        <td><code>right_layer</code></td>
+        <td><code>int</code></td>
+        <td><p>The initial year for the right layer. Defaults to 2023.</p></td>
+        <td><code>2023</code></td>
+      </tr>
+      <tr>
+        <td><code>widget_width</code></td>
+        <td><code>str</code></td>
+        <td><p>The width of the dropdown widgets. Defaults to "70px".</p></td>
+        <td><code>&#39;70px&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>add_legend</code></td>
+        <td><code>bool</code></td>
+        <td><p>If True, adds a legend to the map. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>add_layer_control</code></td>
+        <td><code>bool</code></td>
+        <td><p>If True, adds a layer control to the map. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>Additional keyword arguments to pass to the cog_tile function.</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>None</code></td>
+      <td><p>None</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/leafmap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_nlcd_ts</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">left_year</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1985</span><span class="p">,</span>
+    <span class="n">right_layer</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2023</span><span class="p">,</span>
+    <span class="n">widget_width</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;70px&quot;</span><span class="p">,</span>
+    <span class="n">add_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">add_layer_control</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds a time series comparison of NLCD (National Land Cover Database) layers to the map.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        left_year (int, optional): The initial year for the left layer. Defaults to 1985.</span>
+<span class="sd">        right_layer (int, optional): The initial year for the right layer. Defaults to 2023.</span>
+<span class="sd">        widget_width (str, optional): The width of the dropdown widgets. Defaults to &quot;70px&quot;.</span>
+<span class="sd">        add_legend (bool, optional): If True, adds a legend to the map. Defaults to True.</span>
+<span class="sd">        add_layer_control (bool, optional): If True, adds a layer control to the map. Defaults to True.</span>
+<span class="sd">        **kwargs (Any): Additional keyword arguments to pass to the cog_tile function.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">allowed_years</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1985</span><span class="p">,</span> <span class="mi">2024</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="n">left_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+        <span class="n">options</span><span class="o">=</span><span class="n">allowed_years</span><span class="p">,</span>
+        <span class="n">value</span><span class="o">=</span><span class="n">left_year</span><span class="p">,</span>
+        <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;description_width&quot;</span><span class="p">:</span> <span class="s2">&quot;initial&quot;</span><span class="p">},</span>
+        <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">widget_width</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">right_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+        <span class="n">options</span><span class="o">=</span><span class="n">allowed_years</span><span class="p">,</span>
+        <span class="n">value</span><span class="o">=</span><span class="n">right_layer</span><span class="p">,</span>
+        <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;description_width&quot;</span><span class="p">:</span> <span class="s2">&quot;initial&quot;</span><span class="p">},</span>
+        <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">widget_width</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="n">left_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">left_widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topleft&quot;</span><span class="p">)</span>
+    <span class="n">right_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span>
+        <span class="n">widget</span><span class="o">=</span><span class="n">right_widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span>
+    <span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">left_control</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">right_control</span><span class="p">)</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;https://s3-us-west-2.amazonaws.com/mrlc/Annual_NLCD_LndCov_</span><span class="si">{}</span><span class="s2">_CU_C1V0.tif&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">colormap</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;11&quot;</span><span class="p">:</span> <span class="s2">&quot;#466b9f&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;12&quot;</span><span class="p">:</span> <span class="s2">&quot;#d1def8&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;21&quot;</span><span class="p">:</span> <span class="s2">&quot;#dec5c5&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;22&quot;</span><span class="p">:</span> <span class="s2">&quot;#d99282&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;23&quot;</span><span class="p">:</span> <span class="s2">&quot;#eb0000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;24&quot;</span><span class="p">:</span> <span class="s2">&quot;#ab0000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;31&quot;</span><span class="p">:</span> <span class="s2">&quot;#b3ac9f&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;41&quot;</span><span class="p">:</span> <span class="s2">&quot;#68ab5f&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;42&quot;</span><span class="p">:</span> <span class="s2">&quot;#1c5f2c&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;43&quot;</span><span class="p">:</span> <span class="s2">&quot;#b5c58f&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;51&quot;</span><span class="p">:</span> <span class="s2">&quot;#af963c&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;52&quot;</span><span class="p">:</span> <span class="s2">&quot;#ccb879&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;71&quot;</span><span class="p">:</span> <span class="s2">&quot;#dfdfc2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;72&quot;</span><span class="p">:</span> <span class="s2">&quot;#d1d182&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;73&quot;</span><span class="p">:</span> <span class="s2">&quot;#a3cc51&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;74&quot;</span><span class="p">:</span> <span class="s2">&quot;#82ba9e&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;81&quot;</span><span class="p">:</span> <span class="s2">&quot;#dcd939&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;82&quot;</span><span class="p">:</span> <span class="s2">&quot;#ab6c28&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;90&quot;</span><span class="p">:</span> <span class="s2">&quot;#b8d9eb&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;95&quot;</span><span class="p">:</span> <span class="s2">&quot;#6c9fb8&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">left_url</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">left_year</span><span class="p">)</span>
+    <span class="n">right_url</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">right_layer</span><span class="p">)</span>
+    <span class="n">left_tile</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span><span class="n">left_url</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">right_tile</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span><span class="n">right_url</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">left_layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">left_tile</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;NLCD </span><span class="si">{</span><span class="n">left_year</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">right_layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">right_tile</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;NLCD </span><span class="si">{</span><span class="n">right_layer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">split_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">SplitMapControl</span><span class="p">(</span>
+        <span class="n">left_layer</span><span class="o">=</span><span class="n">left_layer</span><span class="p">,</span> <span class="n">right_layer</span><span class="o">=</span><span class="n">right_layer</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">split_control</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">add_layer_control</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_layer_control</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">add_legend</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;NLCD Land Cover Type&quot;</span><span class="p">,</span> <span class="n">builtin_legend</span><span class="o">=</span><span class="s2">&quot;NLCD&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">change_left_year</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+        <span class="n">left_tile</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="p">),</span> <span class="n">colormap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">left_layer</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">left_tile</span>
+        <span class="n">left_layer</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;NLCD </span><span class="si">{</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="nf">change_right_year</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+        <span class="n">right_tile</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="p">),</span> <span class="n">colormap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">right_layer</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">right_tile</span>
+        <span class="n">right_layer</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;NLCD </span><span class="si">{</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="n">left_widget</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">change_left_year</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+    <span class="n">right_widget</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">change_right_year</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
